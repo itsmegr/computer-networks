@@ -4,8 +4,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    int pid2, pid3;
-    int status;
+    int pid2, pid3, status;
     pid2 = fork();
     if (pid2 > 0) {
         pid3 = fork();
