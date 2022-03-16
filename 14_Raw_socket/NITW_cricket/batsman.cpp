@@ -13,8 +13,8 @@ void getRunFromFd(int fd)
     int end = data.find(" ");
     int speed = stoi(data.substr(start, end - start));
     int spin = stoi(data.substr(end + 1));
-    // cout<<speed<<" "<<spin<<endl;
-    run = (speed + spin) % 40;
+    // run = (speed + spin) % 40;
+    run = 6;
     cout << "Run randomized\n";
 
 }
@@ -50,9 +50,9 @@ int main() {
     // cout << "Connected to the D1\n";
 
 
-    active_fd = getActiveRawSocket("./uds3.sock");
+    active_fd = getActiveUDSsocketAfterConnecting("./uds3.sock");
     cout << "umpire connected to batsman\n";
-    
+
 
     passive_fd = getpassiveUDSsocket("./uds2.sock", true);
     bowler_usfd = accept(passive_fd, NULL, NULL);
@@ -70,8 +70,7 @@ int main() {
     raw_socket();
 
 
-    //sending the run to umpire also
-    active_fd = getActiveRawSocket("./uds3.sock");
+    //sending the run to umpire
     WriteFD(active_fd, to_string(run));
 
 

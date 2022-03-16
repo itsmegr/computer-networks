@@ -3,7 +3,7 @@ int batsman_usfd, passive_fd, active_fd;
 
 
 int main() {
-    passive_fd = getpassiveUDSsocket("./uds2.sock", true);
+    passive_fd = getpassiveUDSsocket("./uds3.sock", true);
     batsman_usfd = accept(passive_fd, NULL, NULL);
     cout << "bastman connected to umpire\n";
 
