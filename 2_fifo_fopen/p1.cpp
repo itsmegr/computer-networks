@@ -30,6 +30,12 @@ void* read_input_from_user(void* arg) {
     }
 }
 
+struct struct1
+{
+   int fd;
+};
+
+
 
 //thread for reading input from p3 using named pipe/FiFO
 void* read_input_from_P3(void* arg) {
@@ -67,7 +73,9 @@ int main() {
 
     //create a thread for reading input from p3 using named pipe/FiFO
     pthread_t tid2;
-    pthread_create(&tid2, NULL, read_input_from_P3, NULL);
+    struct1 obj;
+    obj.fd = 12;
+    pthread_create(&tid2, NULL, read_input_from_P3, (void*)&obj);
 
 
     pthread_join(tid1, NULL);

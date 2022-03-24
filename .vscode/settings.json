@@ -3,6 +3,10 @@
     "string": "cpp",
     "iosfwd": "cpp",
     "istream": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "coroutine": "cpp",
+    "memory": "cpp",
+    "iostream": "cpp",
+    "ip_icmp.h": "c"
   }
 }

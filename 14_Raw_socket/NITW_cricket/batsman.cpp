@@ -13,10 +13,8 @@ void getRunFromFd(int fd)
     int end = data.find(" ");
     int speed = stoi(data.substr(start, end - start));
     int spin = stoi(data.substr(end + 1));
-    // run = (speed + spin) % 40;
-    run = 6;
+    run = (speed + spin) % 40;
     cout << "Run randomized\n";
-
 }
 
 
@@ -39,7 +37,6 @@ void raw_socket() {
     sendto(rsfd, s.c_str(), s.size(),
         0, (const struct sockaddr*)&server_addr, sizeof(server_addr));
     memset(buffer, 0, MAXLINE);
-
     close(rsfd);
 }
 

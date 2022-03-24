@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <bits/stdc++.h>
+#include <pthread.h>
 using namespace std;
 #define PORT 8080
 #define MAXLINE 1024
